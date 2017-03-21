@@ -1,4 +1,6 @@
+#include <cmath>
 #include "WMath.h"
+
 using namespace wsm;
 vec2::vec2(float x, float y) {
     this->x = x;
