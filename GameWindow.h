@@ -7,8 +7,8 @@
 #include <fstream>
 #include <algorithm>
 #include <string>
-#include <glew.h>
-#include <glfw3.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include "Loaders.h"
 #include "TextView.h"
 #include <glm.hpp>
