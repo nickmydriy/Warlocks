@@ -2,7 +2,7 @@
 #include "Loaders.h"
 
 
-GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath) {
+GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath, bool text) {
 	GLuint vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 	std::string vertexShaderCode;
@@ -57,6 +57,15 @@ GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath)
 	GLuint programID = glCreateProgram();
 	glAttachShader(programID, vertexShaderID);
 	glAttachShader(programID, fragmentShaderID);
+	if (text) {
+		glBindAttribLocation (programID, 0, "vertexPositionScreenSpace");
+		glBindAttribLocation (programID, 1, "vertexUV");
+	}
+	else {
+		glBindAttribLocation (programID, 0, "vertexPositionModelSpace");
+		glBindAttribLocation (programID, 1, "vertexUV");
+		glBindAttribLocation (programID, 2, "vertexNormalModelSpace");
+	}
 	glLinkProgram(programID);
 
 	glGetProgramiv(programID, GL_LINK_STATUS, &result);

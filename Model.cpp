@@ -3,6 +3,9 @@
 #include <time.h>
 #include "Model.h"
 
+// TODO:
+#define TIME_DIVISOR 100000
+
 Model::Model(GameWindow *gameWindow,const char *objPath, const char *texturePath) {
     this->gameWindow = gameWindow;
 	std::vector<glm::vec3> vertex;
@@ -101,7 +104,7 @@ void Model::vertexCompress(float points) {
 }
 
 void Model::animationUpdate(float points) {
-    float proctime = (clock() - time) / 1000;
+    float proctime = (clock() - time) / TIME_DIVISOR;
     time = clock();
     srand(time);
     for (size_t i = 0; i < animatedVertex.size(); i++) {

@@ -1,4 +1,5 @@
 #include "Warlock.h"
+#define TIME_DIVISOR 100000
 
 Warlock::Warlock(Model *warlockModel, Model *fireBallModel, Model *hpBarModel, wsm::vec2 position, float rotation, float warlockBright,
                  float warlockTransparency, vec3 warlockFilter, vec3 warlockColor, float fireBallBright,
@@ -44,10 +45,10 @@ void Warlock::setFire(wsm::vec2 to) {
 void Warlock::setAdditionalVector(wsm::vec2 vector) {
     if (clock() < timer) {
         additionVector = vector + additionVector * ((timer - clock()) / 2000);
-        timer = clock() + 1000;
+        timer = clock() + TIME_DIVISOR;
     } else {
         additionVector = vector;
-        timer = clock() + 1000;
+        timer = clock() + TIME_DIVISOR;
     }
 }
 

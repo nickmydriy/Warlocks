@@ -23,7 +23,7 @@
  * \param framentShaderPath Path to fragment shader
  * \return ID of compiled program
  */
-GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath);
+GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath, bool text);
 /**
  * Loads texture from DDS image, creates mipmap
  * \param imagePath Path to image

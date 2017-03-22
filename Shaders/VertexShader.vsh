@@ -1,14 +1,14 @@
-#version 330 core
+#version 120
 
-layout(location = 0) in vec3 vertexPositionModelSpace;
-layout(location = 1) in vec2 vertexUV;
-layout(location = 2) in vec3 vertexNormalModelSpace;
+attribute vec3 vertexPositionModelSpace;
+attribute vec2 vertexUV;
+attribute vec3 vertexNormalModelSpace;
 
-out vec2 UV;
-out vec3 positionWorldSpace;
-out vec3 normalCameraSpace;
-out vec3 eyeDirectionCameraSpace;
-out vec3 lightDirectionCameraSpace;
+varying vec2 UV;
+varying vec3 positionWorldSpace;
+varying vec3 normalCameraSpace;
+varying vec3 eyeDirectionCameraSpace;
+varying vec3 lightDirectionCameraSpace;
 
 uniform mat4 mvpMatrix;
 uniform mat4 viewMatrix;

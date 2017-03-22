@@ -1,9 +1,9 @@
-#version 330 core
+#version 120
 
-layout(location = 0) in vec2 vertexPositionScreenSpace;
-layout(location = 1) in vec2 vertexUV;
+attribute vec2 vertexPositionScreenSpace;
+attribute vec2 vertexUV;
 
-out vec2 UV;
+varying vec2 UV;
 
 uniform vec2 screen;
 

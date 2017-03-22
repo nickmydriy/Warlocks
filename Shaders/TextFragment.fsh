@@ -1,16 +1,14 @@
-#version 330 core
+#version 120
 
-in vec2 UV;
-
-out vec4 color;
+varying vec2 UV;
 
 uniform sampler2D myTextSampler;
 uniform vec3 textColor;
 uniform vec4 backGroundColor;
 
 void main(){
-	color = texture2D(myTextSampler, UV);
-	color.rgb = color.rgb * textColor;
-	color.rgb = color.rgb * color.a - ((color.a - 1) * backGroundColor.rgb);
-	color.a = color.a - ((color.a - 1) * backGroundColor.a);
+	gl_FragColor = texture2D(myTextSampler, UV);
+	gl_FragColor.rgb = gl_FragColor.rgb * textColor;
+	gl_FragColor.rgb = gl_FragColor.rgb * gl_FragColor.a - ((gl_FragColor.a - 1) * backGroundColor.rgb);
+	gl_FragColor.a = gl_FragColor.a - ((gl_FragColor.a - 1) * backGroundColor.a);
 }

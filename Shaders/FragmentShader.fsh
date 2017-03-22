@@ -1,12 +1,10 @@
-#version 330 core
+#version 120
 
-in vec2 UV;
-in vec3 positionWorldSpace;
-in vec3 normalCameraSpace;
-in vec3 eyeDirectionCameraSpace;
-in vec3 lightDirectionCameraSpace;
-
-out vec4 color;
+varying vec2 UV;
+varying vec3 positionWorldSpace;
+varying vec3 normalCameraSpace;
+varying vec3 eyeDirectionCameraSpace;
+varying vec3 lightDirectionCameraSpace;
 
 uniform sampler2D myTextureSampler;
 uniform vec3 lightPositionWorldSpace;
@@ -33,10 +31,10 @@ void main(){
 	vec3 E = normalize(eyeDirectionCameraSpace);
 	vec3 R = reflect(-light, normal);
 	float cosAlpha = clamp(dot(E, R), 0, 1);
-	color.rgb = materialAmbientColor * bright
+	gl_FragColor.rgb = materialAmbientColor * bright
 	 + materialDiffuseColor * lightColor * lightPower * cosTheta / distance * bright
 	 + materialSpecularColor * lightColor * lightPower * pow(cosAlpha, 5) / distance;
-	color.rgb = color.rgb * myFilter;
-	color.rgb = color.rgb + myColor;
-	color.a = alpha * texture2D(myTextureSampler, UV).a;
+	gl_FragColor.rgb = gl_FragColor.rgb * myFilter;
+	gl_FragColor.rgb = gl_FragColor.rgb + myColor;
+	gl_FragColor.a = alpha * texture2D(myTextureSampler, UV).a;
 }
