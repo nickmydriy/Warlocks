@@ -3,9 +3,6 @@
 #include <time.h>
 #include "Model.h"
 
-// TODO:
-#define TIME_DIVISOR 100000
-
 Model::Model(GameWindow *gameWindow,const char *objPath, const char *texturePath) {
     this->gameWindow = gameWindow;
 	std::vector<glm::vec3> vertex;

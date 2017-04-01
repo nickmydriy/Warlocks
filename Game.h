@@ -11,6 +11,7 @@
 #define MAGMA_SPEED 0.2
 #define MAGMA_DAMAGE 8
 #define FIREBALL_DAMAGE 5
+
 class Game{
 public:
     /**

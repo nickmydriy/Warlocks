@@ -13,7 +13,7 @@ include_directories(
         ${GLEW_INCLUDE_DIR}
         lib/glm/)
 
-add_library(glew STATIC IMPORTED)
+# add_library(glew STATIC IMPORTED)
 
 set(SOURCE_FILES
         Model.cpp

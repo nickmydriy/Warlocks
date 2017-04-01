@@ -17,6 +17,11 @@
 #include "Model.h"
 #include <map>
 
+#if defined(_WIN32)
+#define TIME_DIVISOR 1000
+#else
+#define TIME_DIVISOR 100000
+#endif
 
 using namespace glm;
 

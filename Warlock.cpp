@@ -1,5 +1,4 @@
 #include "Warlock.h"
-#define TIME_DIVISOR 100000
 
 Warlock::Warlock(Model *warlockModel, Model *fireBallModel, Model *hpBarModel, wsm::vec2 position, float rotation, float warlockBright,
                  float warlockTransparency, vec3 warlockFilter, vec3 warlockColor, float fireBallBright,

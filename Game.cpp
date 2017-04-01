@@ -1,8 +1,5 @@
 #include "Game.h"
 
-// TODO:
-#define TIME_DIVISOR 100000
-
 Game::Game() {
     //get settings
     std::vector<int> settings = getSettings();
