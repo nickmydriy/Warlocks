@@ -43,7 +43,7 @@ void Warlock::setFire(wsm::vec2 to) {
 
 void Warlock::setAdditionalVector(wsm::vec2 vector) {
     if (clock() < timer) {
-        additionVector = vector + additionVector * ((timer - clock()) / (TIME_DIVISOR * 2);
+        additionVector = vector + additionVector * ((timer - clock()) / (TIME_DIVISOR * 2));
         timer = clock() + TIME_DIVISOR;
     } else {
         additionVector = vector;
