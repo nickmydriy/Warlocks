@@ -9,7 +9,7 @@ TextView::TextView(const char *texturePath, vec2 screenRes){
 	glGenBuffers(1, &textVertexID);
 	glGenBuffers(1, &textUVID);
 
-	textProgramID = loadProgram("Shaders/TextVertex.vsh", "Shaders/TextFragment.fsh");
+	textProgramID = loadProgram("Shaders/TextVertex.vsh", "Shaders/TextFragment.fsh", true);
 	textUniformID = glGetUniformLocation(textProgramID, "myTextSampler");
 	textColorID = glGetUniformLocation(textProgramID, "textColor");
 	screenResID = glGetUniformLocation(textProgramID, "screen");

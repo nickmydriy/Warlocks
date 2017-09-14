@@ -3,8 +3,8 @@
 #include "Loaders.h"
 #include <vector>
 #include <glm.hpp>
-#include <glew.h>
-#include <glfw3.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 class GameWindow;
 /**

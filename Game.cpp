@@ -80,7 +80,7 @@ bool Game::gameProcess() {
     double time = clock();
     do {
         //save time of current frame
-        double proctime = (clock() - time) / 1000;
+        double proctime = (clock() - time) / TIME_DIVISOR;
         time = clock();
         if (gameWindow->isKeyClicked(GLFW_KEY_ESCAPE)) {
             int res = onPause(true, std::string("Game Paused"));

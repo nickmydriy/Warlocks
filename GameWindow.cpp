@@ -40,7 +40,7 @@ GameWindow::GameWindow(int width, int height, int cameraHeight, int mouseBoard, 
 	glDepthFunc(GL_LESS); 		
 	glEnable(GL_CULL_FACE);
 
-	programID = loadProgram("Shaders/VertexShader.vsh", "Shaders/FragmentShader.fsh");
+	programID = loadProgram("Shaders/VertexShader.vsh", "Shaders/FragmentShader.fsh", false);
 	textView = new TextView("Textures/text.dds", vec2((float)windowWidth / 2, (float)windowHeight / 2));
 
 	matrixID = glGetUniformLocation(programID, "mvpMatrix");

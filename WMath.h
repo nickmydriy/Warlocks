@@ -1,7 +1,7 @@
 #pragma once
 #include <algorithm>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 #define PI 3.14159265359
 

@@ -101,7 +101,7 @@ void Model::vertexCompress(float points) {
 }
 
 void Model::animationUpdate(float points) {
-    float proctime = (clock() - time) / 1000;
+    float proctime = (clock() - time) / TIME_DIVISOR;
     time = clock();
     srand(time);
     for (size_t i = 0; i < animatedVertex.size(); i++) {

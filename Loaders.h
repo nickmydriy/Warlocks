@@ -8,8 +8,8 @@
 #include <fstream>
 #include <algorithm>
 #include <string>
-#include <glew.h>
-#include <glfw3.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 
@@ -23,7 +23,7 @@
  * \param framentShaderPath Path to fragment shader
  * \return ID of compiled program
  */
-GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath);
+GLuint loadProgram(const char *vertexShaderPath, const char *fragmentShaderPath, bool text);
 /**
  * Loads texture from DDS image, creates mipmap
  * \param imagePath Path to image
